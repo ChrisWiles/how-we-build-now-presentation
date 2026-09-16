@@ -1,11 +1,12 @@
 const pipelineSteps = [
   {
     id: 'intent', label: 'Human intent', category: 'The starting point', tone: 'neutral',
-    title: 'Define done before the work begins.',
-    description: 'Start with a feature, a bug report, or a question to investigate. People define the desired outcome, the boundaries, and what evidence would make the work complete.',
-    points: ['Feature: define the behavior and acceptance criteria.', 'Bug: describe expected vs. actual behavior and how to reproduce it.', 'Investigation: name the question, scope, and evidence needed.'],
-    example: 'Customers report duplicate orders after a timeout. First investigate whether retries are the cause. Return the evidence, remaining unknowns, and a recommended next step; a fix can follow.',
-    takeaway: 'Done can be a verified change—or a well-supported answer.',
+    title: 'Define done together, before building.',
+    description: 'Start with a feature, a bug report, or a question to investigate. AI helps draft the PRD and technical spec; people and AI work back and forth to uncover gaps, challenge assumptions, and clarify the intended outcome.',
+    points: ['Use a standard planning skill grounded in our codebase, decision records, and recurring issues.', 'Ask, draft, review, and revise: resolve edge cases, dependencies, and tradeoffs together.', 'Agree on scope, acceptance criteria, and evidence; keep unresolved questions explicit.'],
+    exampleLabel: 'IN PRACTICE / PLAN, QUESTION, REFINE',
+    example: 'For duplicate orders, the planning skill flags retry and idempotency risks. AI asks about expected behavior; the developer adds context and revises the spec. The first task may be an investigation with supported findings, not a code change.',
+    takeaway: 'Human direction + AI-assisted planning + lessons from the codebase.',
     view: [0, -110, 500, 360],
   },
   {
