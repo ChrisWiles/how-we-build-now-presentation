@@ -1,0 +1,131 @@
+{
+  "defs": "<defs>\n            <marker id=\"ar\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n              <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"currentColor\" />\n            </marker>\n            <marker id=\"ar-a\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n              <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"var(--accent)\" />\n            </marker>\n            <marker id=\"ar-w\" viewBox=\"0 0 10 10\" refX=\"9\" refY=\"5\" markerWidth=\"7\" markerHeight=\"7\" orient=\"auto-start-reverse\">\n              <path d=\"M 0 1 L 10 5 L 0 9 z\" fill=\"var(--warn)\" />\n            </marker>\n          </defs>\n\n          ",
+  "groups": [
+    {
+      "id": "intent",
+      "step": 0,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"24\" width=\"420\" height=\"60\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" />\n            <text x=\"60\" y=\"49\" font-size=\"13\" font-weight=\"600\" fill=\"currentColor\">HUMAN INTENT</text>\n            <text x=\"60\" y=\"69\" font-size=\"11.5\" fill=\"var(--muted)\">problem \u00b7 spec \u00b7 acceptance criteria \u00b7 policy</text>\n\n            "
+    },
+    {
+      "id": "intent-flow",
+      "step": 1,
+      "kind": "edge",
+      "markup": "<line x1=\"250\" y1=\"84\" x2=\"250\" y2=\"128\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n            <text x=\"262\" y=\"110\" font-size=\"10.5\" fill=\"var(--muted)\">what \"done\" means, written down first</text>\n\n            \n            "
+    },
+    {
+      "id": "orchestration",
+      "step": 1,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"130\" width=\"420\" height=\"76\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" />\n            <text x=\"60\" y=\"155\" font-size=\"13\" font-weight=\"600\" fill=\"currentColor\">ORCHESTRATION</text>\n            <text x=\"60\" y=\"175\" font-size=\"11.5\" fill=\"var(--muted)\">route the task \u00b7 pick the agent \u00b7 pick the model</text>\n            <text x=\"60\" y=\"193\" font-size=\"11.5\" fill=\"var(--muted)\">set budget, scope and timeout</text>\n\n            "
+    },
+    {
+      "id": "bounded-flow",
+      "step": 3,
+      "kind": "edge",
+      "markup": "<line x1=\"250\" y1=\"206\" x2=\"250\" y2=\"250\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n            <text x=\"262\" y=\"232\" font-size=\"10.5\" fill=\"var(--muted)\">bounded task</text>\n\n            \n            "
+    },
+    {
+      "id": "execution",
+      "step": 3,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"252\" width=\"420\" height=\"76\" rx=\"3\" fill=\"var(--surface-sunk)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" stroke-dasharray=\"5 4\" />\n            <text x=\"60\" y=\"277\" font-size=\"13\" font-weight=\"600\" fill=\"var(--muted)\">EXECUTION SANDBOX</text>\n            <text x=\"60\" y=\"297\" font-size=\"11.5\" fill=\"var(--muted)\">agent edits, runs, reads failures, iterates</text>\n            <text x=\"60\" y=\"315\" font-size=\"10.5\" fill=\"var(--muted)\" font-style=\"italic\">this part is close to solved</text>\n\n            "
+    },
+    {
+      "id": "candidate-flow",
+      "step": 5,
+      "kind": "edge",
+      "markup": "<line x1=\"250\" y1=\"328\" x2=\"250\" y2=\"370\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n            <text x=\"262\" y=\"353\" font-size=\"10.5\" fill=\"var(--muted)\">candidate change</text>\n\n            \n            "
+    },
+    {
+      "id": "verification",
+      "step": 5,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"372\" width=\"420\" height=\"112\" rx=\"3\" fill=\"var(--warn-soft)\" stroke=\"var(--warn)\" stroke-width=\"2.5\" />\n            <text x=\"60\" y=\"397\" font-size=\"13\" font-weight=\"600\" fill=\"var(--warn)\">INDEPENDENT VERIFICATION</text>\n            <text x=\"60\" y=\"417\" font-size=\"11.5\" fill=\"var(--ink-soft)\">compiler \u00b7 static analysis \u00b7 tests \u00b7 mutation testing</text>\n            <text x=\"60\" y=\"435\" font-size=\"11.5\" fill=\"var(--ink-soft)\">security scan \u00b7 a critic that did not write the code</text>\n            <text x=\"60\" y=\"459\" font-size=\"10.5\" fill=\"var(--warn)\" font-weight=\"600\">\u25b6 THE CONSTRAINT \u2014 not the author's own opinion</text>\n            <text x=\"60\" y=\"474\" font-size=\"10.5\" fill=\"var(--muted)\">every escape becomes a new check here</text>\n\n            "
+    },
+    {
+      "id": "evidence-flow",
+      "step": 7,
+      "kind": "edge",
+      "markup": "<line x1=\"250\" y1=\"484\" x2=\"250\" y2=\"526\" stroke=\"var(--warn)\" stroke-width=\"1.4\" marker-end=\"url(#ar-w)\" />\n            <text x=\"262\" y=\"509\" font-size=\"10.5\" fill=\"var(--muted)\">evidence, not vibes</text>\n\n            \n            "
+    },
+    {
+      "id": "gate",
+      "step": 7,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"528\" width=\"420\" height=\"62\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" />\n            <text x=\"60\" y=\"553\" font-size=\"13\" font-weight=\"600\" fill=\"currentColor\">CONFIDENCE GATE</text>\n            <text x=\"60\" y=\"574\" font-size=\"11.5\" fill=\"var(--muted)\">risk \u00d7 blast radius decides who signs off</text>\n\n            \n            "
+    },
+    {
+      "id": "release-flow",
+      "step": 9,
+      "kind": "edge",
+      "markup": "<line x1=\"150\" y1=\"590\" x2=\"150\" y2=\"628\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n            <text x=\"162\" y=\"613\" font-size=\"10.5\" fill=\"var(--muted)\">low risk \u00b7 policy allows</text>\n\n            \n            "
+    },
+    {
+      "id": "judgment-flow",
+      "step": 8,
+      "kind": "edge",
+      "markup": "<path d=\"M 460 559 H 556\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n            <text x=\"470\" y=\"551\" font-size=\"10.5\" fill=\"var(--muted)\">uncertain</text>\n\n            \n            "
+    },
+    {
+      "id": "release",
+      "step": 9,
+      "kind": "node",
+      "markup": "<rect x=\"40\" y=\"630\" width=\"420\" height=\"56\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" />\n            <text x=\"60\" y=\"654\" font-size=\"13\" font-weight=\"600\" fill=\"currentColor\">RELEASE</text>\n            <text x=\"60\" y=\"673\" font-size=\"11.5\" fill=\"var(--muted)\">and the telemetry it produces</text>\n\n            \n\n            "
+    },
+    {
+      "id": "context",
+      "step": 2,
+      "kind": "node",
+      "markup": "<rect x=\"560\" y=\"130\" width=\"340\" height=\"76\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--accent)\" stroke-width=\"1.8\" />\n            <text x=\"578\" y=\"155\" font-size=\"12.5\" font-weight=\"600\" fill=\"var(--accent)\">ORGANIZATIONAL CONTEXT</text>\n            <text x=\"578\" y=\"175\" font-size=\"11.5\" fill=\"var(--ink-soft)\">decision records \u00b7 specs \u00b7 ownership</text>\n            <text x=\"578\" y=\"193\" font-size=\"11.5\" fill=\"var(--ink-soft)\">architecture \u00b7 past incidents</text>\n\n            "
+    },
+    {
+      "id": "tools",
+      "step": 4,
+      "kind": "node",
+      "markup": "<rect x=\"560\" y=\"252\" width=\"340\" height=\"76\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--accent)\" stroke-width=\"1.8\" />\n            <text x=\"578\" y=\"277\" font-size=\"12.5\" font-weight=\"600\" fill=\"var(--accent)\">TOOL LAYER</text>\n            <text x=\"578\" y=\"297\" font-size=\"11.5\" fill=\"var(--ink-soft)\">repo \u00b7 CI \u00b7 logs \u00b7 database \u00b7 browser</text>\n            <text x=\"578\" y=\"315\" font-size=\"11.5\" fill=\"var(--ink-soft)\">scoped credentials per agent</text>\n\n            "
+    },
+    {
+      "id": "memory",
+      "step": 6,
+      "kind": "node",
+      "markup": "<rect x=\"560\" y=\"372\" width=\"340\" height=\"76\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--accent)\" stroke-width=\"1.8\" />\n            <text x=\"578\" y=\"397\" font-size=\"12.5\" font-weight=\"600\" fill=\"var(--accent)\">MEMORY &amp; SKILLS</text>\n            <text x=\"578\" y=\"417\" font-size=\"11.5\" fill=\"var(--ink-soft)\">reusable skills \u00b7 known-good paths</text>\n            <text x=\"578\" y=\"435\" font-size=\"11.5\" fill=\"var(--ink-soft)\">every past failure kept as a test</text>\n\n            \n            "
+    },
+    {
+      "id": "context-feed",
+      "step": 2,
+      "kind": "edge",
+      "markup": "<path d=\"M 556 168 H 466\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"1.4\" marker-end=\"url(#ar-a)\" />\n            <text x=\"470\" y=\"161\" font-size=\"10\" fill=\"var(--accent)\" text-anchor=\"start\">informs</text>\n\n            "
+    },
+    {
+      "id": "tools-feed",
+      "step": 4,
+      "kind": "edge",
+      "markup": "<path d=\"M 556 290 H 466\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"1.4\" marker-end=\"url(#ar-a)\" />\n            <text x=\"470\" y=\"283\" font-size=\"10\" fill=\"var(--accent)\" text-anchor=\"start\">grants</text>\n\n            "
+    },
+    {
+      "id": "memory-feed",
+      "step": 6,
+      "kind": "edge",
+      "markup": "<path d=\"M 556 410 H 466\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"1.4\" marker-end=\"url(#ar-a)\" />\n            <text x=\"470\" y=\"403\" font-size=\"10\" fill=\"var(--accent)\" text-anchor=\"start\">arms</text>\n\n            \n            "
+    },
+    {
+      "id": "judgment",
+      "step": 8,
+      "kind": "node",
+      "markup": "<rect x=\"560\" y=\"528\" width=\"340\" height=\"62\" rx=\"3\" fill=\"var(--surface)\" stroke=\"var(--rule-strong)\" stroke-width=\"1.5\" />\n            <text x=\"578\" y=\"553\" font-size=\"12.5\" font-weight=\"600\" fill=\"currentColor\">HUMAN JUDGMENT</text>\n            <text x=\"578\" y=\"574\" font-size=\"11.5\" fill=\"var(--muted)\">intent, architecture, taste, the call to ship</text>\n\n            "
+    },
+    {
+      "id": "judgment-release",
+      "step": 9,
+      "kind": "edge",
+      "markup": "<path d=\"M 730 590 V 658 H 466\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.4\" marker-end=\"url(#ar)\" />\n\n            \n            "
+    },
+    {
+      "id": "feedback",
+      "step": 10,
+      "kind": "edge",
+      "markup": "<path d=\"M 250 686 V 722 H 950 V 168 H 906\" fill=\"none\" stroke=\"var(--accent)\" stroke-width=\"1.4\" stroke-dasharray=\"6 4\" marker-end=\"url(#ar-a)\" />\n            <text x=\"500\" y=\"710\" font-size=\"10.5\" fill=\"var(--accent)\" text-anchor=\"middle\">incidents \u00b7 regressions \u00b7 real usage \u2014 every one of them becomes context</text>\n          "
+    }
+  ]
+}
