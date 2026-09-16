@@ -29,6 +29,20 @@
 @media(min-width:1500px){.chip-roadmap strong{font-size:14px}.chip-roadmap small,.efficiency-evidence p,.buildout-rows p{font-size:12px}.efficiency-evidence b,.buildout-rows strong{font-size:14px}}
 @media(max-height:820px) and (min-width:981px){.forecast-view{margin-top:14px}.forecast-credit{font-size:8px;margin-bottom:7px}.buildout-evidence{padding-top:15px}.chip-roadmap{padding-bottom:12px;gap:9px}.chip-roadmap strong{font-size:11px;margin:7px 0 4px}.chip-roadmap small{font-size:9px}.efficiency-evidence{padding:12px 0;gap:16px}.efficiency-evidence>strong{font-size:36px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p,.buildout-rows p{font-size:10px}.buildout-rows>div{padding:9px 0}.buildout-rows strong{font-size:11px}.evidence-links{font-size:8px;margin-bottom:12px}}
 @media(max-width:600px){.forecast-credit{flex-direction:column;gap:1px;font-size:8px}.chip-roadmap{grid-template-columns:repeat(2,1fr);gap:16px}.efficiency-evidence{gap:14px}.efficiency-evidence>strong{font-size:35px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p{font-size:10px}.buildout-rows>div{grid-template-columns:1fr;gap:6px}.evidence-links{line-height:1.8;gap:8px 15px}}
+.review-views{margin-bottom:18px}
+.review-decisions{border:1px solid #9e793d;background:#231d13;border-radius:4px;padding:15px 17px;margin-bottom:13px}
+.review-decisions h3{color:var(--warn);margin-bottom:8px}
+.review-decisions ol{padding-left:18px;margin:0;color:#d9c7a6;font-size:12px;line-height:1.7}
+.review-brief-list{list-style:none;margin:0;padding:0}
+.review-brief-list li{display:grid;grid-template-columns:112px 72px minmax(0,1fr);align-items:start;gap:12px;padding:12px 0;border-bottom:1px solid var(--rule)}
+.review-brief-list strong{font-size:12px;font-weight:500;line-height:1.6;color:var(--ink-soft)}
+.review-brief-list p{font-size:12px;line-height:1.6;color:#9bb1a3;margin:0}
+.review-status{font:9px/1.6 'IBM Plex Mono',monospace;padding:3px 6px;border-radius:3px;text-align:center}
+.review-status-checked{color:#a2d6b8;background:#1d3427}
+.review-status-concern{color:#edbd67;background:#382a17}
+.review-status-unknown{color:#c7cbd7;background:#282d37}
+@media(min-width:1500px){.review-brief-list strong,.review-brief-list p,.review-decisions ol{font-size:14px}.review-brief-list li{grid-template-columns:130px 80px minmax(0,1fr)}}
+@media(max-width:600px){.review-brief-list li{grid-template-columns:1fr auto;gap:5px 10px}.review-brief-list p{grid-column:1/-1}.review-status{min-width:66px}.review-decisions{padding:13px}.review-decisions ol{font-size:11px}}
 .planning-loop{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:0;margin:0 0 22px}
 .planning-loop li{display:flex;gap:9px;align-items:center;border:1px solid var(--rule-strong);border-radius:4px;padding:10px;font-size:11px;line-height:1.5;color:var(--ink-soft)}
 .planning-loop li>span{font:10px 'IBM Plex Mono',monospace;color:var(--accent)}

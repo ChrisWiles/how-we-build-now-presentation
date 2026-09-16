@@ -23,7 +23,27 @@ function SkillsPanel() {
   </div>;
 }
 
+function ReviewBrief() {
+  const areas = [
+    ['Intent', 'Checked', 'The spec defines one order per retry key.'],
+    ['Architecture', 'Concern', 'A new helper duplicates the order service’s retry path.'],
+    ['Risk & rollback', 'Concern', 'Touches order creation; rollout and recovery need an owner.'],
+    ['Performance', 'Unknown', 'Peak-load behavior has not been measured.'],
+    ['Security & data', 'Checked', 'Tenant-isolation tests pass; no permission changes.'],
+    ['Verification', 'Checked', 'Timeout/retry E2E passes; recording attached.'],
+  ];
+  return <div className="review-brief">
+    <section className="review-decisions" aria-label="Needs human judgment">
+      <h3>Needs human judgment</h3>
+      <ol><li>Should we reuse the existing order-service path?</li><li>What evidence and rollout limits do we need before release?</li></ol>
+    </section>
+    <ul className="review-brief-list" aria-label="Review checklist">{areas.map(([area,status,evidence])=><li key={area}><strong>{area}</strong><span className={`review-status review-status-${status.toLowerCase()}`}>{status}</span><p>{evidence}</p></li>)}</ul>
+    <p className="small-note">Illustrative example. Actual briefs link claims to code, test results, and previews. “Checked” applies only to the evidence described; unknowns stay visible.</p>
+  </div>;
+}
+
 function ReviewPanel() {
+  const [view, setView] = useState('brief');
   const stages = [
     [BookOpenText, '01', 'Plan with the relevant skills', 'Acceptance criteria, domain rules, failure cases.'],
     [Code, '02', 'Implement and exercise the feature', 'Run checks. Capture screenshots. Inspect actual behavior.'],
@@ -31,10 +51,13 @@ function ReviewPanel() {
     [GitPullRequest, '04', 'Open PR → CI review → sign-off', 'Independent checks and review remain part of the handoff.'],
   ];
   return <div className="insight-body review-panel">
-    <PanelHeading kicker="QUALITY STARTS UPSTREAM" title="A PR should arrive with evidence." />
+    <PanelHeading kicker={view === 'brief' ? 'ILLUSTRATIVE PR / RETRY SAFETY' : 'QUALITY STARTS UPSTREAM'} title={view === 'brief' ? 'A review you can act on.' : 'A PR should arrive with evidence.'} />
+    <div className="scenario-controls review-views" role="group" aria-label="Review view"><button type="button" aria-pressed={view === 'brief'} onClick={() => setView('brief')}>Review brief</button><button type="button" aria-pressed={view === 'process'} onClick={() => setView('process')}>Review process</button></div>
+    {view === 'brief' ? <ReviewBrief /> : <>
     <ol className="workflow-list">{stages.map(([Icon,n,title,detail],i)=><li key={n} className={i===2?'emphasized':''}><span className="workflow-number">{n}</span><Icon /><div><strong>{title}</strong><p>{detail}</p></div>{i===2&&<span className="stage-badge">BEFORE PR</span>}</li>)}</ol>
     <div className="evidence-row"><span>Tests</span><span>Screenshots</span><span>Actual behavior</span><span>Review findings</span></div>
     <p className="small-note">A separate reviewer uses the original requirements and evidence. More approval from the author alone does not establish independence.</p>
+    </>}
   </div>;
 }
 
