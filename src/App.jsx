@@ -117,6 +117,7 @@ export function App() {
           <div className="eyebrow"><span className="step-number">{number(index)}</span><span>{step.category}</span></div>
           <h1 id="step-title">{step.title}</h1>
           <p className="description">{step.description}</p>
+          {step.planningLoop && <ol className="planning-loop" aria-label="Repeat the planning loop as needed">{step.planningLoop.map((phase, i) => <li key={phase}><span>{i + 1}</span>{phase}</li>)}</ol>}
           <ul className="points">{step.points.map(point => <li key={point}><span className="point-rule" />{point}</li>)}</ul>
           <aside className="example"><div className="example-label">{step.exampleLabel || <>IN PRACTICE <span>/ A RETRIED ORDER</span></>}</div><p>{step.example}</p></aside>
         </div>

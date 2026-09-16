@@ -17,6 +17,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Keep the original Figure 1 walkthrough and expand it with practical team workflows.
 - Human intent can begin with a feature, a bug, or an investigation. An investigation can finish with supported findings and a recommendation; it need not produce a code change.
 - Human intent includes iterative human–AI collaboration on the PRD and technical spec. Use a standard planning skill grounded in codebase context, decision records, and recurring issues to surface gaps, assumptions, edge cases, and dependencies; refine the outcome and acceptance criteria through feedback before implementation.
+- Make planning a visible loop on Human Intent: AI draft, human questions and feedback, revision and further questions, then an agreed plan. Orchestration turns that plan into bounded tasks and sends new gaps back through planning.
 - Organizational context must explain why decisions were made, including tradeoffs and past failures. Prefer specs and decision records committed in the same repo; otherwise provide clear, accessible links from the repo so agents can retrieve the rationale.
 - Repeated PR feedback, verification failures, production observations, and incidents should improve the earliest relevant docs, tech-spec skills, implementation skills, domain skills, review skills, and checks.
 - Include local review before a PR, plus independent CI review and verification of tests, screenshots, and actual behavior.

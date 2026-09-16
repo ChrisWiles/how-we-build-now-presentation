@@ -29,6 +29,9 @@
 @media(min-width:1500px){.chip-roadmap strong{font-size:14px}.chip-roadmap small,.efficiency-evidence p,.buildout-rows p{font-size:12px}.efficiency-evidence b,.buildout-rows strong{font-size:14px}}
 @media(max-height:820px) and (min-width:981px){.forecast-view{margin-top:14px}.forecast-credit{font-size:8px;margin-bottom:7px}.buildout-evidence{padding-top:15px}.chip-roadmap{padding-bottom:12px;gap:9px}.chip-roadmap strong{font-size:11px;margin:7px 0 4px}.chip-roadmap small{font-size:9px}.efficiency-evidence{padding:12px 0;gap:16px}.efficiency-evidence>strong{font-size:36px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p,.buildout-rows p{font-size:10px}.buildout-rows>div{padding:9px 0}.buildout-rows strong{font-size:11px}.evidence-links{font-size:8px;margin-bottom:12px}}
 @media(max-width:600px){.forecast-credit{flex-direction:column;gap:1px;font-size:8px}.chip-roadmap{grid-template-columns:repeat(2,1fr);gap:16px}.efficiency-evidence{gap:14px}.efficiency-evidence>strong{font-size:35px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p{font-size:10px}.buildout-rows>div{grid-template-columns:1fr;gap:6px}.evidence-links{line-height:1.8;gap:8px 15px}}
+.planning-loop{display:grid;grid-template-columns:1fr 1fr;gap:8px;list-style:none;padding:0;margin:0 0 22px}
+.planning-loop li{display:flex;gap:9px;align-items:center;border:1px solid var(--rule-strong);border-radius:4px;padding:10px;font-size:11px;line-height:1.5;color:var(--ink-soft)}
+.planning-loop li>span{font:10px 'IBM Plex Mono',monospace;color:var(--accent)}
 .scheduled-panel .status-list{margin-top:0}
 .scheduled-panel .status-row p{margin:6px 0 0}
 .scheduled-ledger{display:flex;gap:13px;background:#192e22;border:1px solid #355f48;border-radius:4px;padding:16px;margin-top:18px}
