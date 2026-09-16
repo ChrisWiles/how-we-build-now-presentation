@@ -28,6 +28,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 - Explain production agents correlating new logs with features and notifying the author or owner with actionable evidence.
 - Preserve the production monitoring workflow while emphasizing immediate automatic alerts to the PR author when a new post-release issue is credibly linked to their change. Get evidence and next actions to the right person quickly; retain owner fallback, stated uncertainty, deduplication, and upstream learning.
 - Include a shared project-manager agent that reduces cognitive load by reconciling tickets, PRs, reviews, blockers, and releases.
+- Immediately before the compute outlook, include scheduled and event-driven agents: developer workload and worktree support; weekly/monthly docs, PR-feedback distillation, best-practice research, skill refreshes with stronger models, codebase/architecture audits, and deployment health. Use spare pre-reset token capacity for prioritized, budgeted work. Publish a shared audit history in GitHub issues with evidence and follow-ups so people and agents avoid duplicate work; routines can report or act within defined permissions.
 - End with the case for building this foundation now to capture future model improvements. Date and cite compute disclosures; distinguish current operating snapshots from planned deployments, supplier programs from company totals, and compute capacity from model capability.
 - These are presentation concepts, not authorization to connect services, deploy agents, or send notifications.
 

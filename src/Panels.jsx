@@ -83,6 +83,21 @@ function ManagerPanel() {
   </div>;
 }
 
+function ScheduledPanel() {
+  const routines = [
+    ['Daily', 'Clear the path for developers', 'Surface reviews and ticket updates, reconcile workloads, and clean up finished worktrees after checking for uncommitted or unpushed work.'],
+    ['Weekly', 'Turn feedback into better defaults', 'Read PR comments across the team. Distill recurring lessons into docs, domain skills, implementation skills, and checks.'],
+    ['Monthly / new model', 'Revisit the foundations', 'Research current best practices. Re-evaluate skills with stronger models; audit architecture, recurring patterns, and code cleanup opportunities.'],
+    ['On events / scheduled', 'Watch deployment health', 'Check releases, logs, and regressions. Report evidence, route issues to owners, or carry out a predefined response.'],
+  ];
+  return <div className="insight-body scheduled-panel">
+    <PanelHeading kicker="A PROPOSED OPERATING RHYTHM" title="Useful work, without a fresh prompt." />
+    <div className="status-list">{routines.map(([cadence,title,detail])=><div className="status-row" key={cadence}><span className="status-tag">{cadence}</span><div><strong>{title}</strong><p>{detail}</p></div></div>)}</div>
+    <div className="scheduled-ledger"><GitPullRequest /><div><strong>One shared audit history in GitHub issues</strong><p>Record scope, date, model, evidence, owner, and follow-ups. Link previous runs so everyone can see what was checked and agents avoid duplicate work.</p></div></div>
+    <div className="panel-outcome"><ListChecks /><span>Each routine has a trigger, a budget, and permission to report, open a PR, or take a defined action.</span></div>
+  </div>;
+}
+
 function SourceLink({ id, children }) {
   return <a href={sourceById(id).url} target="_blank" rel="noreferrer">{children}</a>;
 }
@@ -149,9 +164,9 @@ export function SourcesPanel() {
   </div>;
 }
 
-const panelNames = {skills:'DOMAIN-SKILL ORCHESTRATION',review:'BEFORE AND AFTER THE PR',production:'AFTER DEPLOYMENT',learning:'THE LEARNING SYSTEM',manager:'COORDINATING THE WORK',runway:'READY FOR THE NEXT MODELS'};
+const panelNames = {skills:'DOMAIN-SKILL ORCHESTRATION',review:'BEFORE AND AFTER THE PR',production:'AFTER DEPLOYMENT',learning:'THE LEARNING SYSTEM',manager:'COORDINATING THE WORK',scheduled:'SCHEDULED & EVENT-DRIVEN AGENTS',runway:'READY FOR THE NEXT MODELS'};
 export function InsightPanel({ kind, onSources }) {
-  const components = {skills:SkillsPanel,review:ReviewPanel,production:ProductionPanel,learning:LearningPanel,manager:ManagerPanel,runway:RunwayPanel};
+  const components = {skills:SkillsPanel,review:ReviewPanel,production:ProductionPanel,learning:LearningPanel,manager:ManagerPanel,scheduled:ScheduledPanel,runway:RunwayPanel};
   const Content = components[kind];
   return <section className={`diagram-panel insight-panel insight-${kind}`} aria-label={panelNames[kind]}><div className="diagram-toolbar"><span>{panelNames[kind]}</span><span>{kind==='runway'?'THE OPPORTUNITY':'HOW WE PUT IT TO WORK'}</span></div><Content onSources={onSources} /></section>;
 }

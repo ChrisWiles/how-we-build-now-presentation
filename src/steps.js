@@ -170,6 +170,17 @@ const projectManager = {
   diagramStage: 11, view: [0, 0, 980, 748],
 };
 
+const scheduledAgents = {
+  id: 'scheduled-agents', panel: 'scheduled', label: 'Scheduled agents', category: 'Beyond the active task', tone: 'teal',
+  title: 'Keep improving between the tasks.',
+  description: 'Agents can work on a schedule or react to events across the workflow. They keep work moving, maintain our shared knowledge, and return with findings—or take actions within their assigned scope.',
+  points: ['Help developers manage reviews, ticket updates, blockers, and stale worktrees.', 'Regularly distill PR feedback, refresh docs and skills, and audit the codebase.', 'Publish findings in shared GitHub issues so people and future agents can build on prior work.'],
+  exampleLabel: 'PUT SPARE CAPACITY TO WORK',
+  example: 'Before a weekly token allowance resets, run a prioritized audit from the backlog within a set budget. Check previous reports first, record evidence, and link follow-up fixes instead of repeating the same audit.',
+  takeaway: 'The system keeps learning—even when nobody starts a new task.',
+  diagramStage: 11, view: [0, 0, 980, 748],
+};
+
 const modelRunway = {
   id: 'model-runway', panel: 'runway', label: 'Be ready for better models', category: 'Why build this now', tone: 'teal',
   title: 'Build now. Be ready for the next leap.',
@@ -186,5 +197,5 @@ export const steps = [
   ...base.slice(0, 2), domainSkills,
   ...base.slice(2, 6), localReview,
   ...base.slice(6, 10), productionAgents,
-  base[10], learningLoop, base[11], projectManager, modelRunway,
+  base[10], learningLoop, base[11], projectManager, scheduledAgents, modelRunway,
 ];

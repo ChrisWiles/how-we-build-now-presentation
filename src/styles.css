@@ -29,6 +29,13 @@
 @media(min-width:1500px){.chip-roadmap strong{font-size:14px}.chip-roadmap small,.efficiency-evidence p,.buildout-rows p{font-size:12px}.efficiency-evidence b,.buildout-rows strong{font-size:14px}}
 @media(max-height:820px) and (min-width:981px){.forecast-view{margin-top:14px}.forecast-credit{font-size:8px;margin-bottom:7px}.buildout-evidence{padding-top:15px}.chip-roadmap{padding-bottom:12px;gap:9px}.chip-roadmap strong{font-size:11px;margin:7px 0 4px}.chip-roadmap small{font-size:9px}.efficiency-evidence{padding:12px 0;gap:16px}.efficiency-evidence>strong{font-size:36px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p,.buildout-rows p{font-size:10px}.buildout-rows>div{padding:9px 0}.buildout-rows strong{font-size:11px}.evidence-links{font-size:8px;margin-bottom:12px}}
 @media(max-width:600px){.forecast-credit{flex-direction:column;gap:1px;font-size:8px}.chip-roadmap{grid-template-columns:repeat(2,1fr);gap:16px}.efficiency-evidence{gap:14px}.efficiency-evidence>strong{font-size:35px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p{font-size:10px}.buildout-rows>div{grid-template-columns:1fr;gap:6px}.evidence-links{line-height:1.8;gap:8px 15px}}
+.scheduled-panel .status-list{margin-top:0}
+.scheduled-panel .status-row p{margin:6px 0 0}
+.scheduled-ledger{display:flex;gap:13px;background:#192e22;border:1px solid #355f48;border-radius:4px;padding:16px;margin-top:18px}
+.scheduled-ledger>svg{width:22px;height:22px;flex-shrink:0;color:var(--accent)}
+.scheduled-ledger strong{font-size:13px;font-weight:500;color:#c6d3cd}
+.scheduled-ledger p{font-size:12px;line-height:1.6;color:#9bb1a3;margin:7px 0 0}
+.scheduled-panel .panel-outcome{border-top:0;padding-bottom:0}
 /* Bound both slide columns to the space above the navigation. Long explanations
    scroll independently, while the takeaway and diagram legend stay visible. */
 .deck-heading,.diagram-toolbar,.diagram-footer,.takeaway{flex-shrink:0}
