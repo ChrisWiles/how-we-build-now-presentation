@@ -78,7 +78,7 @@ export function App() {
   }, [go]);
   useEffect(() => {
     try { window.history.replaceState(null, '', `#${step.id}`); } catch { /* Some file previews restrict history. */ }
-    document.title = `${step.label} · The pipeline we’re building toward`;
+    document.title = `${step.label} · AI Feedback Loop Engineering`;
   }, [step]);
   useEffect(() => { if (modal) dialog.current?.showModal(); else dialog.current?.close(); }, [modal]);
   useEffect(() => {
@@ -99,7 +99,7 @@ export function App() {
 
   return <div className={`presentation tone-${step.tone}`}>
     <header className="topbar">
-      <a className="brand" href="https://chriswiles.github.io/how-we-build-now/" target="_blank" rel="noreferrer">HOW WE BUILD NOW<span className="brand-divider" /><span className="figure-label">FIGURE 01</span></a>
+      <a className="brand" href="https://chriswiles.github.io/how-we-build-now/" target="_blank" rel="noreferrer">AI FEEDBACK LOOP ENGINEERING</a>
       <nav className="header-actions" aria-label="Presentation tools">
         <button className="quiet-button" onClick={() => setModal('map')} title="Complete diagram (M)"><Graph size={18} /><span>Full diagram</span></button>
         <button className="icon-button fullscreen-button" onClick={toggleFullscreen} title="Toggle fullscreen (F)" aria-label={fullscreen ? 'Exit fullscreen' : 'Enter fullscreen'}>{fullscreen ? <ArrowsIn size={19} /> : <ArrowsOut size={19} />}</button>

@@ -12,6 +12,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Presentation direction — September 16, 2026
 
+- Title the presentation “AI Feedback Loop Engineering”; use that branding in the header and browser title. Retain attribution to the original Figure 1.
 - Slide content must never overlap the navigation. At desktop widths, keep the takeaway and diagram footer visible and allow long explanations to scroll within the available height; retain normal document flow on mobile.
 - Keep the original Figure 1 walkthrough and expand it with practical team workflows.
 - Human intent can begin with a feature, a bug, or an investigation. An investigation can finish with supported findings and a recommendation; it need not produce a code change.

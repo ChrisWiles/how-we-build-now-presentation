@@ -1,6 +1,6 @@
-# The pipeline we’re building toward
+# AI Feedback Loop Engineering
 
-A local React presentation of Figure 1 from [How We Build Now](https://chriswiles.github.io/how-we-build-now/), expanded into an 18-step team operating model. The vector diagram is sourced directly from the original essay. The expanded explanations, workflows, and examples are presentation copy.
+A React presentation of Figure 1 from [How We Build Now](https://chriswiles.github.io/how-we-build-now/), expanded into a 19-step team operating model. The vector diagram is sourced directly from the original essay. The expanded explanations, workflows, and examples are presentation copy.
 
 ## Open
 
