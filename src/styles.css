@@ -29,5 +29,15 @@
 @media(min-width:1500px){.chip-roadmap strong{font-size:14px}.chip-roadmap small,.efficiency-evidence p,.buildout-rows p{font-size:12px}.efficiency-evidence b,.buildout-rows strong{font-size:14px}}
 @media(max-height:820px) and (min-width:981px){.forecast-view{margin-top:14px}.forecast-credit{font-size:8px;margin-bottom:7px}.buildout-evidence{padding-top:15px}.chip-roadmap{padding-bottom:12px;gap:9px}.chip-roadmap strong{font-size:11px;margin:7px 0 4px}.chip-roadmap small{font-size:9px}.efficiency-evidence{padding:12px 0;gap:16px}.efficiency-evidence>strong{font-size:36px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p,.buildout-rows p{font-size:10px}.buildout-rows>div{padding:9px 0}.buildout-rows strong{font-size:11px}.evidence-links{font-size:8px;margin-bottom:12px}}
 @media(max-width:600px){.forecast-credit{flex-direction:column;gap:1px;font-size:8px}.chip-roadmap{grid-template-columns:repeat(2,1fr);gap:16px}.efficiency-evidence{gap:14px}.efficiency-evidence>strong{font-size:35px}.efficiency-evidence b{font-size:11px}.efficiency-evidence p{font-size:10px}.buildout-rows>div{grid-template-columns:1fr;gap:6px}.evidence-links{line-height:1.8;gap:8px 15px}}
-@media(min-width:981px){.stage:has(.insight-runway){grid-template-rows:minmax(0,1fr)}.stage:has(.insight-runway) .narrative{min-height:0;overflow:auto;scrollbar-width:thin}.insight-runway{min-height:0}}
+/* Bound both slide columns to the space above the navigation. Long explanations
+   scroll independently, while the takeaway and diagram legend stay visible. */
+.deck-heading,.diagram-toolbar,.diagram-footer,.takeaway{flex-shrink:0}
+.narrative-content:focus-visible{outline:2px solid var(--active);outline-offset:-2px}
+@media(min-width:981px){
+  .presentation{min-height:0}
+  .stage{grid-template-rows:minmax(0,1fr)}
+  .narrative,.diagram-panel{min-height:0}
+  .narrative-content{min-height:0;overflow:auto;padding-right:8px;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent}
+  .takeaway{padding-bottom:2px}
+}
 @media(max-height:740px) and (min-width:981px){.stage:has(.insight-runway) h1{font-size:34px;margin-top:14px}.stage:has(.insight-runway) .description{font-size:13px;margin-bottom:13px}.stage:has(.insight-runway) .points{margin-bottom:13px}.stage:has(.insight-runway) .points li{font-size:11px}.stage:has(.insight-runway) .example{padding:11px 13px}.stage:has(.insight-runway) .takeaway{font-size:15px;margin-top:10px;padding-top:10px}.insight-runway .compute-chart{max-height:185px}.insight-runway .buildout-evidence{padding-top:11px}.insight-runway .chip-roadmap{padding-bottom:8px}.insight-runway .efficiency-evidence{padding:9px 0}.insight-runway .buildout-rows>div{padding:7px 0}.insight-runway .evidence-links{margin-bottom:8px}.insight-runway .insight-body{padding-top:13px;padding-bottom:13px}}

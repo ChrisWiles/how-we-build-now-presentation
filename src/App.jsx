@@ -113,7 +113,7 @@ export function App() {
       if (Math.abs(dx) > 65 && Math.abs(dy) < 45) go(i => i + (dx < 0 ? 1 : -1));
     }} onPointerCancel={() => { pointer.current = null; }}>
       <section className="narrative" aria-labelledby="step-title">
-        <div key={step.id} className="narrative-content">
+        <div key={step.id} className="narrative-content" tabIndex={0} role="region" aria-label="Slide explanation">
           <div className="eyebrow"><span className="step-number">{number(index)}</span><span>{step.category}</span></div>
           <h1 id="step-title">{step.title}</h1>
           <p className="description">{step.description}</p>

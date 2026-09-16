@@ -12,6 +12,7 @@ Build app UI in `src/`. Keep `.openai/hosting.json`, `worker/index.js`, `scripts
 
 ## Presentation direction — September 16, 2026
 
+- Slide content must never overlap the navigation. At desktop widths, keep the takeaway and diagram footer visible and allow long explanations to scroll within the available height; retain normal document flow on mobile.
 - Keep the original Figure 1 walkthrough and expand it with practical team workflows.
 - Human intent can begin with a feature, a bug, or an investigation. An investigation can finish with supported findings and a recommendation; it need not produce a code change.
 - Organizational context must explain why decisions were made, including tradeoffs and past failures. Prefer specs and decision records committed in the same repo; otherwise provide clear, accessible links from the repo so agents can retrieve the rationale.
