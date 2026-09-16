@@ -1,13 +1,13 @@
 const pipelineSteps = [
   {
     id: 'intent', label: 'Human intent', category: 'The starting point', tone: 'neutral',
-    title: 'Plan together. Challenge. Refine.',
-    description: 'Start with a feature, bug, or investigation. Human and AI develop the PRD, spec, and plan through repeated questions and feedback. Review alternatives, uncover gaps, and revise before implementation begins.',
-    planningLoop: ['AI drafts a plan', 'Human questions & feedback', 'AI revises & asks again', 'Agree on the plan'],
-    points: ['Use a standard planning skill grounded in codebase context, past decisions, and recurring issues.', 'Work through scope, edge cases, dependencies, and tradeoffs; repeat the feedback loop until key gaps are resolved.', 'Capture the agreed approach, acceptance criteria, verification plan, and remaining questions.'],
+    title: 'Ask. Discuss. Plan together.',
+    description: 'Begin a feature, bug, or investigation with a deep planning conversation. AI asks clarifying questions; people add context, challenge the approach, and give feedback. Develop the PRD, spec, and plan through several rounds before implementation.',
+    planningLoop: ['AI asks clarifying questions', 'Discuss options & tradeoffs', 'Draft, critique & revise', 'Agree on scope & evidence'],
+    points: ['Ask what outcome matters, why this is the right approach, and what we may be overlooking.', 'Use the planning skill and codebase context to discuss architecture, reuse, dependencies, and failure cases.', 'Keep asking and revising until key gaps are resolved; record acceptance criteria, verification, and remaining unknowns.'],
     exampleLabel: 'IN PRACTICE / PLAN, QUESTION, REFINE',
-    example: 'AI proposes client-side retry checks. The developer points out a past incident; AI revises toward server-side idempotency and asks how long retries remain valid. Together they refine the spec and tests. Unknown causes can become an investigation first.',
-    takeaway: 'A reviewed plan is the handoff—not the first AI draft.',
+    example: 'AI asks when duplicates happen and how retries should behave. The developer shares a past incident. They discuss client checks versus existing server-side idempotency, revise the plan, and agree on tests. Unclear causes become an investigation first.',
+    takeaway: 'Work through the questions together before committing to the implementation.',
     view: [0, -110, 500, 360],
   },
   {
